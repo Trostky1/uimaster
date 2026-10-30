@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json.schemastore.org/claude-code-plugin-manifest.json",
+  "name": "uimaster",
+  "displayName": "UIMaster",
+  "version": "1.0.0",
+  "description": "One system for UI work: 20 UX laws, art direction, design craft, and audits for humans and agents alike.",
+  "author": {
+    "name": "Trostky1"
+  },
+  "license": "MIT",
+  "keywords": [
+    "ux",
+    "ui",
+    "design",
+    "taste",
+    "usability",
+    "heuristics",
+    "accessibility",
+    "cuj",
+    "audit",
+    "frontend",
+    "craft"
+  ],
+  "dependencies": [
+    "web-quality-skills@addy-web-quality-skills"
+  ],
+  "homepage": "https://github.com/Trostky1/uimaster",
+  "repository": "https://github.com/Trostky1/uimaster"
+}

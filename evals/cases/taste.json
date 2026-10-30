@@ -1,0 +1,49 @@
+{
+  "skill_name": "taste",
+  "trigger": {
+    "positive": [
+      {
+        "prompt": "This landing page looks generic and AI-made, make it look award-level",
+        "top_k": 3
+      },
+      {
+        "prompt": "Art direction for a restaurant website with a distinctive premium look",
+        "top_k": 3
+      },
+      {
+        "prompt": "Give my portfolio page a distinctive designed feel, not a template",
+        "top_k": 3
+      }
+    ],
+    "negative": [
+      {
+        "prompt": "Render my audit reports as self-contained HTML pages",
+        "owner": "render-report"
+      },
+      {
+        "prompt": "Interview me one question at a time to write critical user journeys",
+        "owner": "spec-cuj"
+      }
+    ]
+  },
+  "behavioral_target": {
+    "name": "sprout",
+    "repo": "https://github.com/carlsz/sprout",
+    "run": "npm install && npm run dev"
+  },
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "Build a one-page site for a small bakery with the taste skill.",
+      "expected_output": "A page built from a dealt direction and a subject-specific idea, checked in a real browser.",
+      "expectations": [
+        "Writes the page as claims with proof before designing",
+        "Deals a direction and records any redraw with a reason",
+        "States the idea sentence and the competitor test",
+        "Runs the inspector and fixes every FAIL",
+        "Does not use eyebrows, gradient text, or decorative numbering"
+      ],
+      "trust_level": "provisional"
+    }
+  ]
+}

@@ -1,0 +1,53 @@
+{
+  "skill_name": "craft",
+  "trigger": {
+    "positive": [
+      {
+        "prompt": "Polish this page before we ship it",
+        "top_k": 3
+      },
+      {
+        "prompt": "Fix the typography hierarchy and the type scale",
+        "top_k": 3
+      },
+      {
+        "prompt": "Harden this form against edge cases, long text, and empty states",
+        "top_k": 3
+      },
+      {
+        "prompt": "Document our design system in DESIGN.md",
+        "top_k": 3
+      }
+    ],
+    "negative": [
+      {
+        "prompt": "Interview me to write critical user journeys for the app",
+        "owner": "spec-cuj"
+      },
+      {
+        "prompt": "Run a heuristic usability audit and write a severity report",
+        "owner": "usability-audit"
+      }
+    ]
+  },
+  "behavioral_target": {
+    "name": "sprout",
+    "repo": "https://github.com/carlsz/sprout",
+    "run": "npm install && npm run dev"
+  },
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "Run /uimaster:polish on the Sprout task list.",
+      "expected_output": "A polish pass that keeps the visual world, fixes drift from the design system, and verifies the render.",
+      "expectations": [
+        "Reads craft-floor.md before the first UI edit",
+        "Does not run the engine launcher when the engine is not installed, and says how to opt in",
+        "Keeps the existing visual identity and content",
+        "Verifies the render at representative sizes",
+        "Reports what changed and what is left"
+      ],
+      "trust_level": "provisional"
+    }
+  ]
+}

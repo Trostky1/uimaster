@@ -1,0 +1,55 @@
+{
+  "skill_name": "uimaster",
+  "trigger": {
+    "positive": [
+      {
+        "prompt": "Build a landing page for my bakery",
+        "top_k": 3
+      },
+      {
+        "prompt": "Redesign my settings screen so it feels better to use",
+        "top_k": 3
+      },
+      {
+        "prompt": "Make this UI look better and fix the spacing and layout",
+        "top_k": 3
+      },
+      {
+        "prompt": "Design a dashboard for our support team",
+        "top_k": 3
+      }
+    ],
+    "negative": [
+      {
+        "prompt": "Run a full UX audit of my app before launch",
+        "owner": "ux-audit"
+      },
+      {
+        "prompt": "Write unit tests for this module using TDD",
+        "owner": "agent-skills:test-driven-development"
+      }
+    ]
+  },
+  "behavioral_target": {
+    "name": "sprout",
+    "repo": "https://github.com/carlsz/sprout",
+    "run": "npm install && npm run dev"
+  },
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "Clone and run https://github.com/carlsz/sprout, then run /uimaster:design to improve the task list screen.",
+      "expected_output": "A mode is chosen, the UX laws are applied, the render is checked at 360 and 1440 px, and /ux-audit findings of severity 3 or higher are fixed.",
+      "expectations": [
+        "States the user's primary goal and the chosen mode (Operate for the task list) before editing",
+        "Does not deal a new art direction for an app screen",
+        "Reads craft-floor.md before the first UI edit",
+        "Checks the render at 360 px and 1440 px",
+        "Runs the ux-audit and writes reports only under .ux/audits/",
+        "Does not start the craft engine download or enable hooks",
+        "Ends with a report of what changed, what was decided, and what is left"
+      ],
+      "trust_level": "provisional"
+    }
+  ]
+}

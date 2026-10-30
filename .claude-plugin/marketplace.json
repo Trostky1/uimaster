@@ -1,0 +1,21 @@
+{
+  "$schema": "https://json.schemastore.org/claude-code-marketplace.json",
+  "name": "uimaster",
+  "description": "One system for UI work: 20 UX laws, art direction, design craft, and audits.",
+  "owner": {
+    "name": "Trostky1"
+  },
+  "plugins": [
+    {
+      "name": "uimaster",
+      "source": "./",
+      "description": "One system for UI work: 20 UX laws, art direction, design craft, and audits for humans and agents alike.",
+      "dependencies": [
+        "web-quality-skills@addy-web-quality-skills"
+      ]
+    }
+  ],
+  "allowCrossMarketplaceDependenciesOn": [
+    "addy-web-quality-skills"
+  ]
+}

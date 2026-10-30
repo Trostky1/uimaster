@@ -1,0 +1,50 @@
+{
+  "skill_name": "ux-laws",
+  "trigger": {
+    "positive": [
+      {
+        "prompt": "Which UX laws apply to this checkout form?",
+        "top_k": 3
+      },
+      {
+        "prompt": "Reduce the number of choices on this screen using Hick's law",
+        "top_k": 3
+      },
+      {
+        "prompt": "Make these buttons easier to hit and tap following Fitts's law",
+        "top_k": 3
+      }
+    ],
+    "negative": [
+      {
+        "prompt": "Do a heuristic evaluation of this screen with Nielsen's ten heuristics",
+        "owner": "usability-audit"
+      },
+      {
+        "prompt": "Replay the checkout journey step by step and report the step that broke",
+        "owner": "audit-cuj"
+      }
+    ]
+  },
+  "behavioral_target": {
+    "name": "sprout",
+    "repo": "https://github.com/carlsz/sprout",
+    "run": "npm install && npm run dev"
+  },
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "Redesign the signup form in Sprout using the UX laws.",
+      "expected_output": "A form with fewer choices, sensible defaults, visible progress, recoverable errors, and a clear completion state.",
+      "expectations": [
+        "Names the user's primary goal first",
+        "Reduces choices per screen and sets defaults that are easy to change",
+        "Shows progress in a multi-step flow",
+        "Keeps the user's input after an error and explains the fix in plain language",
+        "Ends on a clear completion state that says what happens next",
+        "Does not invent a new interaction pattern without a stated gain"
+      ],
+      "trust_level": "provisional"
+    }
+  ]
+}
